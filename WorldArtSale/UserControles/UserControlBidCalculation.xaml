@@ -1,0 +1,221 @@
+﻿<UserControl x:Class="GUI.UserControlBidCalculation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI"
+             mc:Ignorable="d"
+             d:DesignHeight="511"
+             d:DesignWidth="328">
+    <Grid x:Name="GridMony"
+          Background="WhiteSmoke">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <ComboBox Grid.ColumnSpan="4"
+                  Grid.Column="2"
+                  Grid.Row="2"
+                  FontFamily="Lucida Console"
+                  FontSize="18"                  
+                  Margin="3"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Center">            
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b50">50</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b100">100</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b200">200</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b300">300</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b400">400</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b500">500</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b1000">1.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b2000">2.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b3000">3.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b4000">4.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b5000">5.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b10000">10.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b20000">20.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b30000">30.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b40000">40.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b50000">50.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b100000">100.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b300000">300.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b500000">500.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b1000000">1.000.000</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Right" Name="b2000000">2.000.000</ComboBoxItem>
+        </ComboBox>
+        <Label Grid.ColumnSpan="4"
+               Grid.Column="2"
+               Grid.Row="1"
+               Content="Fast forøgelse af bud:"
+               FontSize="16"
+               HorizontalContentAlignment="Center"
+               Margin="1,3,0,0" />
+        
+        
+        
+        
+        
+        
+        
+
+
+        <Label Grid.ColumnSpan="2"
+               Content="Kundens bud:"
+               FontFamily="Lucida Console"
+               FontSize="11"
+               VerticalContentAlignment="Center"
+               Margin="1"
+               Grid.Row="4" />
+        <TextBox Grid.ColumnSpan="4"
+                 Grid.Column="2"
+                 Grid.Row="4"
+                 FontFamily="Lucida Console"
+                 FontSize="14"
+                 HorizontalContentAlignment="Right"
+                 Margin="3"                 
+                 Text="{Binding selectedCustomer.classSalesValue.bidUSD}"
+                 IsReadOnly="False"
+                 VerticalContentAlignment="Center" />
+        <Label Grid.ColumnSpan="1"
+               Grid.Column="6"
+               Content="USD"
+               FontFamily="Lucida Console"
+               FontSize="16"
+               VerticalContentAlignment="Center"
+               Margin="1"
+               Grid.Row="4" />
+        <TextBox Grid.ColumnSpan="4"
+                 Grid.Column="2"
+                 Grid.Row="5"
+                 FontFamily="Lucida Console"
+                 FontSize="14"
+                 HorizontalContentAlignment="Right"
+                 Margin="3"                 
+                 Text="{Binding selectedCustomer.classSalesValue.bidEUR}"
+                 IsReadOnly="True"
+                 VerticalContentAlignment="Center" />
+        <Label Grid.ColumnSpan="1"
+               Grid.Column="6"
+               Content="EUR"
+               FontFamily="Lucida Console"
+               FontSize="16"
+               VerticalContentAlignment="Center"
+               Margin="1"
+               Grid.Row="5" />
+        <TextBox Grid.ColumnSpan="4"
+                 Grid.Column="2"
+                 Grid.Row="6"
+                 FontFamily="Lucida Console"
+                 FontSize="14"
+                 HorizontalContentAlignment="Right"
+                 Margin="3"                 
+                 Text="{Binding selectedCustomer.classSalesValue.bidOwnValuta}"
+                 IsReadOnly="True"
+                 VerticalContentAlignment="Center" />
+        <Label Grid.ColumnSpan="1"
+               Grid.Column="6"
+               Content="*"
+               FontFamily="Lucida Console"
+               FontSize="16"
+               VerticalContentAlignment="Center"
+               Margin="1"
+               Grid.Row="6" />
+
+        <Label Grid.ColumnSpan="2"
+               Content="Pris + salær:"
+               FontFamily="Lucida Console"
+               FontSize="11"
+               HorizontalAlignment="Stretch"
+               VerticalContentAlignment="Center"
+               Margin="1"
+               Grid.Row="8"
+               VerticalAlignment="Stretch" />
+        <TextBox Grid.ColumnSpan="4"
+                 Grid.Column="2"
+                 Grid.Row="8"
+                 FontFamily="Lucida Console"
+                 FontSize="14"
+                 HorizontalContentAlignment="Right"
+                 Margin="3"    
+                 Text="{Binding selectedCustomer.classSalesValue.priceWithFeeUSD}"
+                 IsReadOnly="True"
+                 VerticalContentAlignment="Center" />
+        <Label Grid.ColumnSpan="1"
+               Grid.Column="6"
+               Grid.Row="8"
+               Content="USD"
+               FontFamily="Lucida Console"
+               FontSize="16"
+               VerticalContentAlignment="Center"
+               Margin="1" />
+        <TextBox Grid.ColumnSpan="4"
+                 Grid.Column="2"
+                 Grid.Row="9"
+                 FontFamily="Lucida Console"
+                 FontSize="14"
+                 HorizontalContentAlignment="Right"
+                 Margin="3"
+                 Text="{Binding selectedCustomer.classSalesValue.priceWithFeeEUR}"
+                 IsReadOnly="True"
+                 VerticalContentAlignment="Center" />
+        <Label Grid.ColumnSpan="1"
+               Grid.Column="6"
+               Grid.Row="9"
+               Content="EUR"
+               FontFamily="Lucida Console"
+               FontSize="16"
+               VerticalContentAlignment="Center"
+               Margin="1" />
+        <TextBox Grid.ColumnSpan="4"
+                 Grid.Column="2"
+                 Grid.Row="10"
+                 FontFamily="Lucida Console"
+                 FontSize="14"
+                 HorizontalContentAlignment="Right"
+                 Margin="3"
+                 Text="{Binding selectedCustomer.classSalesValue.priceWithFeeOwnValuta}"
+                 IsReadOnly="True"
+                 VerticalContentAlignment="Center" />
+        <Label Grid.ColumnSpan="1"
+               Grid.Column="6"
+               Grid.Row="10"
+               Content="*"
+               FontFamily="Lucida Console"
+               FontSize="16"
+               VerticalContentAlignment="Center"
+               Margin="1" />
+        <Button Grid.ColumnSpan="4"
+                Grid.Column="2"
+                Grid.Row="11"
+                Content="BYD OP"
+                Margin="3" />
+        <Button Grid.ColumnSpan="4"
+                Grid.Column="2"
+                Grid.Row="13"
+                Content="Registrer køb"
+                Margin="3,10,3,3" />
+
+    </Grid>
+</UserControl>
