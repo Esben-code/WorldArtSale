@@ -47,6 +47,11 @@ namespace Repository
                 if (_classSalesValue != value)
                 {
                     _classSalesValue = value;
+                    if (classSalesValue != null && customerCurrencyID != null)
+                    {
+                        _classSalesValue.customerValuta = customerCurrencyID;
+                    }
+                    
                 }
                 Notify("classSalesValue");
             }
@@ -74,6 +79,11 @@ namespace Repository
                 if (_customerCurrencyID != value)
                 {
                     _customerCurrencyID = value;
+                    //hver gang customerCurrencyID bliver opdateret, så opdater vi også customerValuta
+                    if (classSalesValue != null && classSalesValue.customerValuta != _customerCurrencyID)
+                    {
+                        classSalesValue.customerValuta = _customerCurrencyID;
+                    }
                 }
                 Notify("customerCurrencyID");
             }

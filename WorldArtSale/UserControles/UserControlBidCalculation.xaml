@@ -95,8 +95,10 @@
                  FontSize="14"
                  HorizontalContentAlignment="Right"
                  Margin="3"                 
-                 Text="{Binding selectedCustomer.classSalesValue.bidUSD}"
+                 Text="{Binding selectedCustomer.classSalesValue.bidUSD, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  IsReadOnly="False"
+                 IsEnabled="True"
+                 
                  VerticalContentAlignment="Center" />
         <Label Grid.ColumnSpan="1"
                Grid.Column="6"

@@ -76,6 +76,12 @@ namespace BIZ
                 if (_selectedCustomer != value)
                 {
                     _selectedCustomer = value;
+                    if (selectedCustomer.classSalesValue != null)
+                    {
+                        selectedCustomer.classSalesValue.classCurrency = selectedCurrency;
+                        //selectedCustomer.classSalesValue.customerValuta = selectedCustomer.customerCurrencyID;
+                        //en snørklet lille kode som gør det samme som det i ClassCustomer.customerCurrencyID
+                    }
                 }
                 Notify("selectedCustomer");
             }

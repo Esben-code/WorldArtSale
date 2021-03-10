@@ -183,7 +183,7 @@
                   IsReadOnly="True"
                   Margin="5"
                   
-                  Text="{Binding }" />
+                  Text="{Binding selectedCustomer.customerCurrencyID}" />
         
 
         <Button Grid.ColumnSpan="3"

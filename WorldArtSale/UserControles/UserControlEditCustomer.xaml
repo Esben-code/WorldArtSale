@@ -197,7 +197,7 @@
                 Content="Opret ny kunde"
                 HorizontalAlignment="Stretch"
                 Margin="5"
-                VerticalAlignment="Stretch" Click="OpretButton_Click" />
+                VerticalAlignment="Stretch"  />
 
         <Button Grid.ColumnSpan="3"
                 Grid.Row="13"
@@ -205,7 +205,7 @@
                 Grid.Column="0"
                 HorizontalAlignment="Stretch"
                 Margin="5"
-                VerticalAlignment="Stretch" Click="RedigerButton_Click" />
+                VerticalAlignment="Stretch"  />
 
 
     </Grid>

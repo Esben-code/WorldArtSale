@@ -291,7 +291,9 @@ namespace Repository
             }
         }
 
-
+        /// <summary>
+        /// sætter kursen for alle vores veluta proporties.
+        /// </summary>
         public void SetValutaValueInProperty()
         {
             decimal KRkurs = rates["USD"];

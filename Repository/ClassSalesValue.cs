@@ -15,6 +15,9 @@ namespace Repository
         private string _priceWithFeeEUR;
         private string _priceWithFeeOwnValuta;
         private ClassCurrency _classCurrency;
+        private string _customerValuta;
+
+
 
         public ClassSalesValue()
         {
@@ -25,6 +28,7 @@ namespace Repository
             priceWithFeeEUR = "";
             priceWithFeeOwnValuta = "";
             classCurrency = new ClassCurrency();
+            customerValuta = "";
         }
 
         public ClassSalesValue(ClassSalesValue inSalesValue)
@@ -36,6 +40,21 @@ namespace Repository
             priceWithFeeEUR = "";
             priceWithFeeOwnValuta = "";
             classCurrency = new ClassCurrency();
+            customerValuta = "";
+        }
+
+
+        public string customerValuta
+        {
+            get { return _customerValuta; }
+            set
+            {
+                if (_customerValuta != value)
+                {
+                    _customerValuta = value;
+                }
+                Notify("customerValuta");
+            }
         }
 
 
@@ -130,18 +149,41 @@ namespace Repository
             {
                 if (_bidUSD != value)
                 {
-                    _bidUSD = value;
+                    //for at sikrer os at det der bliver tastet ind er et tal og at vores rates proporty er
+                    //blevet fyldt med dataen fra API'en.
+                    if (decimal.TryParse(value, out decimal X) && classCurrency.rates.ContainsKey("USD"))
+                    {
+
+
+                        _bidUSD = X.ToString("#,##0.00");
+
+                        CalculateAll();
+                    }
+                    else
+                    {
+                        _bidUSD = value;
+                    }
                 }
                 Notify("bidUSD");
+                
             }
         }
 
         /// <summary>
-        /// Denne metode skal tage BidUSD og bruge rates fra ClassCurrency til at fylde bidEUR og bidOwnValuta ud
-        /// plus at gange det med 1,075 (7,5%). for at få priceWithFeeUSD og priceWithFeeEUR 
+        /// tager vores bidUSD og udregner hvad det er i EURO og den valuta kunden har knyttet til deres dataset
         /// </summary>
-        public void CalculateBidInValuta()
+        public void CalculateAll()
         {
+            decimal temp = 0;
+            temp = Convert.ToDecimal(bidUSD);
+
+            bidEUR = (temp * classCurrency.rates["EUR"]).ToString("#,##0.00");
+            bidOwnValuta = (temp * classCurrency.rates[$"{customerValuta}"]).ToString("#,##0.00");
+
+            priceWithFeeUSD = (temp * 1.075M).ToString("#,##0.00");
+            priceWithFeeEUR = (temp * 1.075M * classCurrency.rates["EUR"]).ToString("#,##0.00");
+            priceWithFeeOwnValuta = (temp * 1.075M * classCurrency.rates[$"{customerValuta}"]).ToString("#,##0.00");
+
 
         }
 
