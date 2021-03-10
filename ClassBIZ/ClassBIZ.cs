@@ -111,9 +111,9 @@ namespace BIZ
                 {
                     _selectedCurrency = value;
 
-                    if (_selectedCurrency.rates.ContainsKey("USD"))
+                    if (_selectedCurrency.rates.ContainsKey("USD")) //her søger vi for at der er kommet noget in i rates før vi begynder at bruge den.
                     {
-                        _selectedCurrency.SetValutaValueInProperty();
+                        _selectedCurrency.SetValutaValueInProperty(); //her kalder vi en metode inde i ClassCurrentcy som udregner valuta raten.
                     }
                     
                 }
