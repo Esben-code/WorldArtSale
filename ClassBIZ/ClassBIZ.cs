@@ -35,7 +35,7 @@ namespace BIZ
             listCustomer = new List<ClassCustomer>();
 
             Task.Run(async () => await StartCurrencyApiCall());
-            GetAllCurrencyIdAndNames();
+            classFile.ReadDataFromCurrencyFile();
             listCustomer = classDB.GetAllCustomerFromDB(selectedCurrency);
             listClassArt = classDB.GetAllArtFromDB();
         }
@@ -122,7 +122,11 @@ namespace BIZ
         }
 
 
-
+        /// <summary>
+        /// Kalder Api'en og smider dataen ind i en ClassCurrency.
+        /// Gentager sig selv vært 5 minut (hvært 10 sek for testing)
+        /// </summary>
+        /// <returns></returns>
         public async Task StartCurrencyApiCall()
         {
             while (true)
@@ -136,14 +140,15 @@ namespace BIZ
                 await Task.Delay(10000);
             }
         }
-
-        private void GetAllCurrencyIdAndNames()
-        {
-            selectedCurrency.currencyIdName = classFile.ReadDataFromCurrencyFile();
-            
-            
-            //få alle kontant koderne og navnen fra filen og match dem med api dataen
-        } 
+        //OUTDATED
+       // private void GetAllCurrencyIdAndNames()
+       // {
+       //       selectedCurrency.currencyIdName = classFile.ReadDataFromCurrencyFile();
+       //     
+       //     
+       //       få alle kontant koderne og navnen fra filen
+       //       få dem til at matche sammen med api dataen senere
+       // } 
 
 
 

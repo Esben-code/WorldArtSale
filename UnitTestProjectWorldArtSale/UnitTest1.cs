@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using BIZ;
 
 namespace UnitTestProjectWorldArtSale
 {
@@ -9,6 +10,18 @@ namespace UnitTestProjectWorldArtSale
         [TestMethod]
         public void TestMethod1()
         {
+            //arrange
+            ClassBIZ biz = new ClassBIZ();
+
+
+
+            //act
+
+            //assert
+
+
+
+
         }
     }
 }

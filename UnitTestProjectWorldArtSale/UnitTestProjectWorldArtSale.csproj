@@ -55,6 +55,24 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassBIZ\BIZ.csproj">
+      <Project>{44dc70b8-94e9-4af3-893e-89e781455488}</Project>
+      <Name>BIZ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IO\IO.csproj">
+      <Project>{06137ef1-d5eb-4a85-b36e-04ca5c17dfbc}</Project>
+      <Name>IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{ea62c6f2-2350-42c7-ae15-f5572af460c6}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorldArtSale\GUI.csproj">
+      <Project>{207a71c1-5029-414f-9b4a-792932c85a85}</Project>
+      <Name>GUI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

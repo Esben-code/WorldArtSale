@@ -11,13 +11,18 @@ namespace IO
 {
     public class ClassWorldArtSaleDB : ClassDbCon
     {
-
+        //For programmet til at conecte til databasen
         public ClassWorldArtSaleDB()
         {
             SetCon(@"Server=ESBENSPC\SQLEXPRESS;Database=WorldArtSale;Trusted_Connection=True;");
         }
 
-
+        /// <summary>
+        /// Denne metode henter alt dataen fra Databasens table "Customer" plus lidt fra tablet 
+        /// "ArtTrade" og laver det om til en liste af ClassCustomer's
+        /// </summary>
+        /// <param name="inCurrency"></param>
+        /// <returns></returns>
         public List<ClassCustomer> GetAllCustomerFromDB(ClassCurrency inCurrency)
         {
             List<ClassCustomer> listCCres = new List<ClassCustomer>();
