@@ -47,6 +47,7 @@
                   SelectedValue="{Binding selectedCustomer.name}"
                   SelectedItem="{Binding selectedCustomer}"
                   IsEditable="True"
+                  IsEnabled="False"
                   IsReadOnly="True"
                   Text="Vælg kunde"
                   Margin="10,6,3,6" />

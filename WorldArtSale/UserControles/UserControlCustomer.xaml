@@ -166,7 +166,7 @@
                  FontSize="12"
                  Margin="3,5,3,5"
                  Text="{Binding selectedCustomer.phoneNo}" />
-        
+
         <TextBox Grid.ColumnSpan="7"
                  Grid.Column="2"
                  Grid.Row="9"
@@ -177,22 +177,13 @@
                  Margin="3,5,3,5"
                  Text="{Binding selectedCustomer.classSalesValue.bidUSD}" />
 
-        <!--ItemsSource="{"Binding selectedCurrency.currencyIdName}"
-                  SelectedValuePath="currencyIdName"
-                  DisplayMemberPath="currencyIdName"
-                  SelectedValue="{Binding selectedCustomer.customerCurrencyID}"-->
-
-        <ComboBox Grid.ColumnSpan="7"
+        <TextBox Grid.ColumnSpan="7"
                   Grid.Column="2"
                   Grid.Row="10"
                   IsReadOnly="True"
-                  IsEditable="True"
-                  ItemsSource="{Binding}"
-                  SelectedValuePath=""
-                  DisplayMemberPath=""
-                  SelectedValue=""
                   Margin="5"
-                  Text="Vælg valuta kunden betaler med" />
+                  
+                  Text="{Binding }" />
         
 
         <Button Grid.ColumnSpan="3"

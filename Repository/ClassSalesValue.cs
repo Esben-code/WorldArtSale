@@ -136,7 +136,14 @@ namespace Repository
             }
         }
 
+        /// <summary>
+        /// Denne metode skal tage BidUSD og bruge rates fra ClassCurrency til at fylde bidEUR og bidOwnValuta ud
+        /// plus at gange det med 1,075 (7,5%). for at få priceWithFeeUSD og priceWithFeeEUR 
+        /// </summary>
+        public void CalculateBidInValuta()
+        {
 
+        }
 
     }
 }
